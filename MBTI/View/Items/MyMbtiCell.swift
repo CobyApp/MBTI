@@ -43,7 +43,6 @@ struct MyMbtiCell: View{
             .shadow(color: .black, radius: 34, x: 0, y: 4)
             .blur(radius: 30, opaque: false)
         )
-        .padding()
     }
 
 }

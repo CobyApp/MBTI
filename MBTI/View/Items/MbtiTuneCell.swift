@@ -1,5 +1,5 @@
 //
-//  TodayMbtiCell.swift
+//  MbtiTuneCell.swift
 //  MBTI
 //
 //  Created by COBY_PRO on 2022/04/30.
@@ -7,21 +7,10 @@
 
 import SwiftUI
 
-struct TodayMbtiCell: View{
-    
-    var body: some View{
-       
+struct MbtiTuneCell: View {
+    var body: some View {
         VStack(alignment: .center) {
-            
-            Image("ENFJ")
-                .resizable()
-                .scaledToFit()
-                .padding()
-            
-            Text("ENFJ")
-                .font(.system(size: 40, weight: .semibold))
-                .foregroundColor(Color.black)
-            
+            PieChart(symbol: "E")
         }
         .padding(30)
         .frame(maxWidth: .infinity)
@@ -34,5 +23,4 @@ struct TodayMbtiCell: View{
             .blur(radius: 30, opaque: false)
         )
     }
-
 }

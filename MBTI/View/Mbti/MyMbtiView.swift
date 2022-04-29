@@ -18,16 +18,19 @@ struct MyMbtiView: View {
             VStack(alignment: .leading) {
                 
                 MyMbtiCell()
+                    .padding()
                 
-                LazyVGrid(columns: items, spacing: 2 ,content: {
+                Text("MBTI 수치")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(Color.black)
+                    .padding()
+                
+                LazyVGrid(columns: items, spacing: 8 ,content: {
                     ForEach(0 ..< 4) { _ in
-                        Image("enfj")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: width, height: width)
-                            .clipped()
+                        MbtiTuneCell()
                     }
                 })
+                .padding(.horizontal)
                 
             }
         }

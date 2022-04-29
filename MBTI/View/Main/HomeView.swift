@@ -16,6 +16,7 @@ struct HomeView: View {
                 VStack(alignment: .leading) {
                     
                     TodayMbtiCell()
+                        .padding()
                     
                     Text(Date(), style: .date)
                         .font(.system(size: 20, weight: .semibold))
