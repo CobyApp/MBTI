@@ -59,15 +59,15 @@ struct ActivityListView: View {
                             .font(.system(size: 16, weight: .regular))
                             .foregroundColor(Color.black)
                             .padding()
+                            .frame(maxWidth: .infinity, maxHeight: 80, alignment: .leading)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .background(Color.black
+                                .opacity(0.05)
+                                .shadow(color: .black, radius: 20, x: 0, y: 4)
+                                .blur(radius: 10, opaque: false)
+                            )
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 80, alignment: .leading)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .background(Color.black
-                        .opacity(0.05)
-                        .shadow(color: .black, radius: 20, x: 0, y: 4)
-                        .blur(radius: 10, opaque: false)
-                    )
                     
                 }.padding(.horizontal)
                 
