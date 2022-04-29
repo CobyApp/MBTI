@@ -22,6 +22,7 @@
 		CBA51965281B915B003291F5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51964281B915B003291F5 /* MenuCell.swift */; };
 		CBA51967281B916D003291F5 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51966281B916D003291F5 /* ActivityCell.swift */; };
 		CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51968281B9281003291F5 /* TodayActivityView.swift */; };
+		CBA5196B281C32C9003291F5 /* MbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5196A281C32C9003291F5 /* MbtiCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		CBA51964281B915B003291F5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		CBA51966281B916D003291F5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		CBA51968281B9281003291F5 /* TodayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayActivityView.swift; sourceTree = "<group>"; };
+		CBA5196A281C32C9003291F5 /* MbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				CBA51959281B837B003291F5 /* SetMbtiView.swift */,
 				CBA5195B281B8387003291F5 /* MyMbtiView.swift */,
+				CBA5196A281C32C9003291F5 /* MbtiCell.swift */,
 			);
 			path = Mbti;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				CBA51952281B7FEA003291F5 /* UploadActivityView.swift in Sources */,
 				CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */,
 				CBA51967281B916D003291F5 /* ActivityCell.swift in Sources */,
+				CBA5196B281C32C9003291F5 /* MbtiCell.swift in Sources */,
 				CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */,
 				CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */,
 				CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */,

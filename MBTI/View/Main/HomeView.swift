@@ -8,22 +8,42 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         NavigationView {
             ScrollView() {
                 
                 VStack(alignment: .leading) {
                     
+                    MyMbtiCardView()
+                    
+                    Text(Date(), style: .date)
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .padding()
+                    
                     NavigationLink {
                         MyMbtiView()
                     } label: {
-                        MyMbtiCardView()
+                        MenuCell(guide: "나의 MBTI 분석하기")
                     }
                     
                     NavigationLink {
                         TodayActivityView()
                     } label: {
-                        MenuCell(guide: "오늘의 활동은?")
+                        MenuCell(guide: "오늘의 활동 추천받기")
+                    }
+                    
+                    NavigationLink {
+                        UploadActivityView()
+                    } label: {
+                        MenuCell(guide: "새로운 활동 등록하기")
+                    }
+                    
+                    NavigationLink {
+                        ActivityListView()
+                    } label: {
+                        MenuCell(guide: "다른 활동 둘러보기")
                     }
                     
                 }
@@ -54,9 +74,9 @@ struct MyMbtiCardView: View{
         .background(Color.white)
         .cornerRadius(34)
         .background(Color.black
-            .opacity(0.12)
+            .opacity(0.08)
             .shadow(color: .black, radius: 34, x: 0, y: 4)
-            .blur(radius: 100, opaque: false)
+            .blur(radius: 30, opaque: false)
         )
         .padding()
     }

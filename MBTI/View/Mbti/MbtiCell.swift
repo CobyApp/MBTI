@@ -1,5 +1,5 @@
 //
-//  MenuCell.swift
+//  MbtiCell.swift
 //  MBTI
 //
 //  Created by COBY_PRO on 2022/04/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MenuCell: View {
+struct MbtiCell: View {
     
     let guide: String
     
