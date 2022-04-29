@@ -20,9 +20,9 @@
 		CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51960281B848F003291F5 /* CoreDataManager.swift */; };
 		CBA51963281B86BF003291F5 /* MbtiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51962281B86BF003291F5 /* MbtiViewModel.swift */; };
 		CBA51965281B915B003291F5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51964281B915B003291F5 /* MenuCell.swift */; };
-		CBA51967281B916D003291F5 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51966281B916D003291F5 /* ActivityCell.swift */; };
 		CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51968281B9281003291F5 /* TodayActivityView.swift */; };
-		CBA5196B281C32C9003291F5 /* MbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5196A281C32C9003291F5 /* MbtiCell.swift */; };
+		CBA51974281C3BD4003291F5 /* TodayMbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */; };
+		CBA51976281C3BE2003291F5 /* MyMbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +40,9 @@
 		CBA51960281B848F003291F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CBA51962281B86BF003291F5 /* MbtiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiViewModel.swift; sourceTree = "<group>"; };
 		CBA51964281B915B003291F5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		CBA51966281B916D003291F5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		CBA51968281B9281003291F5 /* TodayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayActivityView.swift; sourceTree = "<group>"; };
-		CBA5196A281C32C9003291F5 /* MbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiCell.swift; sourceTree = "<group>"; };
+		CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMbtiCell.swift; sourceTree = "<group>"; };
+		CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMbtiCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +105,7 @@
 		CBA51947281B7CBB003291F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBA5196C281C397D003291F5 /* Items */,
 				CBA51958281B833A003291F5 /* Mbti */,
 				CBA5194D281B7E6A003291F5 /* Activity */,
 				CBA5194A281B7D0A003291F5 /* Main */,
@@ -133,7 +134,6 @@
 			children = (
 				CBA51935281B7C73003291F5 /* ContentView.swift */,
 				CBA5195D281B83DB003291F5 /* HomeView.swift */,
-				CBA51964281B915B003291F5 /* MenuCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -142,9 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				CBA51951281B7FEA003291F5 /* UploadActivityView.swift */,
-				CBA51955281B82E9003291F5 /* ActivityListView.swift */,
-				CBA51966281B916D003291F5 /* ActivityCell.swift */,
 				CBA51968281B9281003291F5 /* TodayActivityView.swift */,
+				CBA51955281B82E9003291F5 /* ActivityListView.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -154,9 +153,18 @@
 			children = (
 				CBA51959281B837B003291F5 /* SetMbtiView.swift */,
 				CBA5195B281B8387003291F5 /* MyMbtiView.swift */,
-				CBA5196A281C32C9003291F5 /* MbtiCell.swift */,
 			);
 			path = Mbti;
+			sourceTree = "<group>";
+		};
+		CBA5196C281C397D003291F5 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				CBA51964281B915B003291F5 /* MenuCell.swift */,
+				CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */,
+				CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +244,9 @@
 				CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */,
 				CBA51963281B86BF003291F5 /* MbtiViewModel.swift in Sources */,
 				CBA51952281B7FEA003291F5 /* UploadActivityView.swift in Sources */,
+				CBA51974281C3BD4003291F5 /* TodayMbtiCell.swift in Sources */,
 				CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */,
-				CBA51967281B916D003291F5 /* ActivityCell.swift in Sources */,
-				CBA5196B281C32C9003291F5 /* MbtiCell.swift in Sources */,
+				CBA51976281C3BE2003291F5 /* MyMbtiCell.swift in Sources */,
 				CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */,
 				CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */,
 				CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */,

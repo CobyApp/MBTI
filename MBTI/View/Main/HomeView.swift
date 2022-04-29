@@ -15,7 +15,7 @@ struct HomeView: View {
                 
                 VStack(alignment: .leading) {
                     
-                    MyMbtiCardView()
+                    TodayMbtiCell()
                     
                     Text(Date(), style: .date)
                         .font(.system(size: 20, weight: .semibold))
@@ -52,35 +52,6 @@ struct HomeView: View {
             .navigationBarHidden(true)
         }
     }
-}
-
-struct MyMbtiCardView: View{
-    var body: some View{
-       
-        VStack(alignment: .center) {
-            
-            Image("enfj")
-                .resizable()
-                .scaledToFit()
-            
-            Text("ENFJ")
-                .font(.system(size: 40, weight: .semibold))
-                .foregroundColor(Color.black)
-            
-        }
-        .padding(40)
-        .frame(maxWidth: .infinity)
-        .aspectRatio(1.0, contentMode: .fit)
-        .background(Color.white)
-        .cornerRadius(34)
-        .background(Color.black
-            .opacity(0.08)
-            .shadow(color: .black, radius: 34, x: 0, y: 4)
-            .blur(radius: 30, opaque: false)
-        )
-        .padding()
-    }
-
 }
 
 struct HomeView_Previews: PreviewProvider {

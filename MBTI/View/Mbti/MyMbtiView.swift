@@ -8,84 +8,32 @@
 import SwiftUI
 
 struct MyMbtiView: View {
+    
+    private let items = [GridItem(), GridItem()]
+    private let width = UIScreen.main.bounds.width / 2
+    
     var body: some View {
         ScrollView() {
             
             VStack(alignment: .leading) {
                 
-                AllMbtiCardView()
+                MyMbtiCell()
+                
+                LazyVGrid(columns: items, spacing: 2 ,content: {
+                    ForEach(0 ..< 4) { _ in
+                        Image("enfj")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: width, height: width)
+                            .clipped()
+                    }
+                })
                 
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text("나의 MBTI"))
     }
-}
-
-struct AllMbtiCardView: View{
-    var body: some View{
-       
-        VStack(alignment: .center) {
-            
-            HStack {
-                
-                VStack {
-                    
-                    Text("현재")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                    
-                    Image("enfj")
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Text("ENFJ")
-                        .font(.system(size: 30, weight: .semibold))
-                        .foregroundColor(Color.black)
-                }
-                
-                Spacer()
-                
-                VStack {
-                    
-                    Text("목표")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                    
-                    Image("enfj")
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Text("ISTP")
-                        .font(.system(size: 30, weight: .semibold))
-                        .foregroundColor(Color.black)
-                }
-                
-            }
-            .padding(.horizontal, 30)
-            .padding(.vertical)
-            
-            Divider()
-            
-            Text("오늘은 I 활동을 좀 더 해보세요.")
-                .font(.system(size: 16, weight: .medium))
-                .foregroundColor(Color.black)
-                .padding()
-            
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .aspectRatio(1.0, contentMode: .fit)
-        .background(Color.white)
-        .cornerRadius(34)
-        .background(Color.black
-            .opacity(0.08)
-            .shadow(color: .black, radius: 34, x: 0, y: 4)
-            .blur(radius: 30, opaque: false)
-        )
-        .padding()
-    }
-
 }
 
 struct MyMbtiView_Previews: PreviewProvider {
