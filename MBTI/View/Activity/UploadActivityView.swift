@@ -53,6 +53,7 @@ struct UploadActivityView: View {
                     .padding()
                 
                 TextField("활동을 입력해주세요.", text: $activity)
+                    .font(.system(size: 16, weight: .regular))
                     .padding()
                     .frame(maxWidth: .infinity, maxHeight: 80)
                     .background(Color.white)
@@ -68,6 +69,25 @@ struct UploadActivityView: View {
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.black)
                     .padding()
+                
+                Spacer()
+                
+                Button(action: {
+                }) {
+                    Text("등록 완료")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color.white)
+                        .padding()
+                        .frame(maxWidth: .infinity, maxHeight: 80)
+                        .background(Color.black)
+                        .cornerRadius(20)
+                        .background(Color.black
+                            .opacity(0.05)
+                            .shadow(color: .black, radius: 20, x: 0, y: 4)
+                            .blur(radius: 10, opaque: false)
+                        )
+                }
+                .padding()
                 
             }
         }

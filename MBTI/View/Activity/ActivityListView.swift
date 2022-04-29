@@ -56,6 +56,7 @@ struct ActivityListView: View {
                     Button(action: {
                     }) {
                         Text("감상문을 적어주세요.")
+                            .font(.system(size: 16, weight: .regular))
                             .foregroundColor(Color.black)
                             .padding()
                     }
