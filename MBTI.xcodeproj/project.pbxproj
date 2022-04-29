@@ -13,12 +13,15 @@
 		CBA5193B281B7C74003291F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA5193A281B7C74003291F5 /* Preview Assets.xcassets */; };
 		CBA51940281B7C74003291F5 /* MBTI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBA5193E281B7C74003291F5 /* MBTI.xcdatamodeld */; };
 		CBA51952281B7FEA003291F5 /* UploadActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51951281B7FEA003291F5 /* UploadActivityView.swift */; };
-		CBA51954281B82CF003291F5 /* TodayActivityIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51953281B82CF003291F5 /* TodayActivityIView.swift */; };
 		CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51955281B82E9003291F5 /* ActivityListView.swift */; };
 		CBA5195A281B837B003291F5 /* SetMbtiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51959281B837B003291F5 /* SetMbtiView.swift */; };
 		CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5195B281B8387003291F5 /* MyMbtiView.swift */; };
 		CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5195D281B83DB003291F5 /* HomeView.swift */; };
 		CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51960281B848F003291F5 /* CoreDataManager.swift */; };
+		CBA51963281B86BF003291F5 /* MbtiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51962281B86BF003291F5 /* MbtiViewModel.swift */; };
+		CBA51965281B915B003291F5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51964281B915B003291F5 /* MenuCell.swift */; };
+		CBA51967281B916D003291F5 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51966281B916D003291F5 /* ActivityCell.swift */; };
+		CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51968281B9281003291F5 /* TodayActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +32,15 @@
 		CBA5193A281B7C74003291F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CBA5193F281B7C74003291F5 /* MBTI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MBTI.xcdatamodel; sourceTree = "<group>"; };
 		CBA51951281B7FEA003291F5 /* UploadActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadActivityView.swift; sourceTree = "<group>"; };
-		CBA51953281B82CF003291F5 /* TodayActivityIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayActivityIView.swift; sourceTree = "<group>"; };
 		CBA51955281B82E9003291F5 /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
 		CBA51959281B837B003291F5 /* SetMbtiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMbtiView.swift; sourceTree = "<group>"; };
 		CBA5195B281B8387003291F5 /* MyMbtiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMbtiView.swift; sourceTree = "<group>"; };
 		CBA5195D281B83DB003291F5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CBA51960281B848F003291F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CBA51962281B86BF003291F5 /* MbtiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiViewModel.swift; sourceTree = "<group>"; };
+		CBA51964281B915B003291F5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		CBA51966281B916D003291F5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		CBA51968281B9281003291F5 /* TodayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		CBA51948281B7CC0003291F5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CBA51962281B86BF003291F5 /* MbtiViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 			children = (
 				CBA51935281B7C73003291F5 /* ContentView.swift */,
 				CBA5195D281B83DB003291F5 /* HomeView.swift */,
+				CBA51964281B915B003291F5 /* MenuCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -132,8 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				CBA51951281B7FEA003291F5 /* UploadActivityView.swift */,
-				CBA51953281B82CF003291F5 /* TodayActivityIView.swift */,
 				CBA51955281B82E9003291F5 /* ActivityListView.swift */,
+				CBA51966281B916D003291F5 /* ActivityCell.swift */,
+				CBA51968281B9281003291F5 /* TodayActivityView.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -219,12 +228,15 @@
 			files = (
 				CBA51940281B7C74003291F5 /* MBTI.xcdatamodeld in Sources */,
 				CBA51936281B7C73003291F5 /* ContentView.swift in Sources */,
+				CBA51965281B915B003291F5 /* MenuCell.swift in Sources */,
 				CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */,
+				CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */,
+				CBA51963281B86BF003291F5 /* MbtiViewModel.swift in Sources */,
 				CBA51952281B7FEA003291F5 /* UploadActivityView.swift in Sources */,
 				CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */,
+				CBA51967281B916D003291F5 /* ActivityCell.swift in Sources */,
 				CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */,
 				CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */,
-				CBA51954281B82CF003291F5 /* TodayActivityIView.swift in Sources */,
 				CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */,
 				CBA5195A281B837B003291F5 /* SetMbtiView.swift in Sources */,
 			);
