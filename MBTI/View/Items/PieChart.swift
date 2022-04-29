@@ -22,7 +22,7 @@ struct PieChart : View {
                 
                 Circle()
                     .trim(from: 0.7, to: 1)
-                    .stroke(Color(hex: "#E6E6E6"), lineWidth: 10)
+                    .stroke(Color(hex: "#FF5757"), lineWidth: 10)
                 
                 Text(symbol)
                     .font(.system(size: 40, weight: .semibold))
