@@ -11,8 +11,14 @@
 		CBA51936281B7C73003291F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51935281B7C73003291F5 /* ContentView.swift */; };
 		CBA51938281B7C74003291F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA51937281B7C74003291F5 /* Assets.xcassets */; };
 		CBA5193B281B7C74003291F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA5193A281B7C74003291F5 /* Preview Assets.xcassets */; };
-		CBA5193D281B7C74003291F5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5193C281B7C74003291F5 /* Persistence.swift */; };
 		CBA51940281B7C74003291F5 /* MBTI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBA5193E281B7C74003291F5 /* MBTI.xcdatamodeld */; };
+		CBA51952281B7FEA003291F5 /* UploadActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51951281B7FEA003291F5 /* UploadActivityView.swift */; };
+		CBA51954281B82CF003291F5 /* TodayActivityIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51953281B82CF003291F5 /* TodayActivityIView.swift */; };
+		CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51955281B82E9003291F5 /* ActivityListView.swift */; };
+		CBA5195A281B837B003291F5 /* SetMbtiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51959281B837B003291F5 /* SetMbtiView.swift */; };
+		CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5195B281B8387003291F5 /* MyMbtiView.swift */; };
+		CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5195D281B83DB003291F5 /* HomeView.swift */; };
+		CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51960281B848F003291F5 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +27,14 @@
 		CBA51935281B7C73003291F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBA51937281B7C74003291F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBA5193A281B7C74003291F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CBA5193C281B7C74003291F5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CBA5193F281B7C74003291F5 /* MBTI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MBTI.xcdatamodel; sourceTree = "<group>"; };
+		CBA51951281B7FEA003291F5 /* UploadActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadActivityView.swift; sourceTree = "<group>"; };
+		CBA51953281B82CF003291F5 /* TodayActivityIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayActivityIView.swift; sourceTree = "<group>"; };
+		CBA51955281B82E9003291F5 /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
+		CBA51959281B837B003291F5 /* SetMbtiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMbtiView.swift; sourceTree = "<group>"; };
+		CBA5195B281B8387003291F5 /* MyMbtiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMbtiView.swift; sourceTree = "<group>"; };
+		CBA5195D281B83DB003291F5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CBA51960281B848F003291F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +67,12 @@
 		CBA51932281B7C73003291F5 /* MBTI */ = {
 			isa = PBXGroup;
 			children = (
+				CBA51949281B7CCA003291F5 /* Utils */,
+				CBA51948281B7CC0003291F5 /* ViewModel */,
+				CBA51947281B7CBB003291F5 /* View */,
+				CBA51946281B7CB3003291F5 /* Model */,
 				CBA51933281B7C73003291F5 /* MBTIApp.swift */,
-				CBA51935281B7C73003291F5 /* ContentView.swift */,
 				CBA51937281B7C74003291F5 /* Assets.xcassets */,
-				CBA5193C281B7C74003291F5 /* Persistence.swift */,
 				CBA5193E281B7C74003291F5 /* MBTI.xcdatamodeld */,
 				CBA51939281B7C74003291F5 /* Preview Content */,
 			);
@@ -71,6 +85,66 @@
 				CBA5193A281B7C74003291F5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CBA51946281B7CB3003291F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBA51947281B7CBB003291F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBA51958281B833A003291F5 /* Mbti */,
+				CBA5194D281B7E6A003291F5 /* Activity */,
+				CBA5194A281B7D0A003291F5 /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBA51948281B7CC0003291F5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CBA51949281B7CCA003291F5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CBA51960281B848F003291F5 /* CoreDataManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CBA5194A281B7D0A003291F5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CBA51935281B7C73003291F5 /* ContentView.swift */,
+				CBA5195D281B83DB003291F5 /* HomeView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CBA5194D281B7E6A003291F5 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				CBA51951281B7FEA003291F5 /* UploadActivityView.swift */,
+				CBA51953281B82CF003291F5 /* TodayActivityIView.swift */,
+				CBA51955281B82E9003291F5 /* ActivityListView.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		CBA51958281B833A003291F5 /* Mbti */ = {
+			isa = PBXGroup;
+			children = (
+				CBA51959281B837B003291F5 /* SetMbtiView.swift */,
+				CBA5195B281B8387003291F5 /* MyMbtiView.swift */,
+			);
+			path = Mbti;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +217,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA5193D281B7C74003291F5 /* Persistence.swift in Sources */,
 				CBA51940281B7C74003291F5 /* MBTI.xcdatamodeld in Sources */,
 				CBA51936281B7C73003291F5 /* ContentView.swift in Sources */,
+				CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */,
+				CBA51952281B7FEA003291F5 /* UploadActivityView.swift in Sources */,
+				CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */,
 				CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */,
+				CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */,
+				CBA51954281B82CF003291F5 /* TodayActivityIView.swift in Sources */,
+				CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */,
+				CBA5195A281B837B003291F5 /* SetMbtiView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
