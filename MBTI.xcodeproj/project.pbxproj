@@ -25,7 +25,7 @@
 		CBA51976281C3BE2003291F5 /* MyMbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */; };
 		CBA51978281C3FB9003291F5 /* MbtiTuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */; };
 		CBA5197E281C462C003291F5 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5197D281C462C003291F5 /* PieChart.swift */; };
-		CBA51980281C49AC003291F5 /* ColorExtentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5197F281C49AC003291F5 /* ColorExtentsion.swift */; };
+		CBA51980281C49AC003291F5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5197F281C49AC003291F5 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 		CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMbtiCell.swift; sourceTree = "<group>"; };
 		CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiTuneCell.swift; sourceTree = "<group>"; };
 		CBA5197D281C462C003291F5 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
-		CBA5197F281C49AC003291F5 /* ColorExtentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtentsion.swift; sourceTree = "<group>"; };
+		CBA5197F281C49AC003291F5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA51960281B848F003291F5 /* CoreDataManager.swift */,
-				CBA5197F281C49AC003291F5 /* ColorExtentsion.swift */,
+				CBA5197F281C49AC003291F5 /* ColorExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				CBA51936281B7C73003291F5 /* ContentView.swift in Sources */,
 				CBA51965281B915B003291F5 /* MenuCell.swift in Sources */,
 				CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */,
-				CBA51980281C49AC003291F5 /* ColorExtentsion.swift in Sources */,
+				CBA51980281C49AC003291F5 /* ColorExtension.swift in Sources */,
 				CBA51978281C3FB9003291F5 /* MbtiTuneCell.swift in Sources */,
 				CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */,
 				CBA51963281B86BF003291F5 /* MbtiViewModel.swift in Sources */,

@@ -27,7 +27,6 @@ struct TodayActivityView: View {
                 .padding(.bottom, 50)
             
             NavigationLink {
-                HomeView()
             } label: {
                 MenuCell(guide: "홈화면으로 돌아가기")
             }

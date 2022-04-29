@@ -10,9 +10,9 @@ import SwiftUI
 struct MyMbtiView: View {
     
     private let items = [GridItem(), GridItem()]
-    private let width = UIScreen.main.bounds.width / 2
     
     var body: some View {
+        
         ScrollView() {
             
             VStack(alignment: .leading) {
@@ -36,6 +36,7 @@ struct MyMbtiView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text("나의 MBTI"))
+        
     }
 }
 

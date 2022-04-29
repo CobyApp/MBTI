@@ -1,5 +1,5 @@
 //
-//  ColorExtentsion.swift
+//  ColorExtension.swift
 //  MBTI
 //
 //  Created by COBY_PRO on 2022/04/30.

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MbtiTuneCell: View {
+    
     var body: some View {
+        
         VStack(alignment: .center) {
             PieChart(symbol: "E")
         }
@@ -22,5 +24,6 @@ struct MbtiTuneCell: View {
             .shadow(color: .black, radius: 34, x: 0, y: 4)
             .blur(radius: 30, opaque: false)
         )
+        
     }
 }
