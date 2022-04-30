@@ -9,9 +9,13 @@ import SwiftUI
 
 struct UploadActivityView: View {
     
-    @State var activity: String = ""
-    @State var rating: Int = 0
+    @State private var mbtiClicked: String = ""
+    @State private var isSelected = [Bool](repeating: false, count: 8)
     
+    @State private var activity: String = ""
+    @State private var rating: Int = 0
+    
+    private let mbti = ["E", "I", "N", "S", "F", "T", "J", "P"]
     private let items = [GridItem(), GridItem(), GridItem(), GridItem()]
     private let width = (UIScreen.main.bounds.width - 56) / 4
     
@@ -27,17 +31,20 @@ struct UploadActivityView: View {
                     .padding()
                 
                 LazyVGrid(columns: items, spacing: 8 ,content: {
-                    ForEach(0 ..< 8) { _ in
+                    ForEach(0 ..< 8) { index in
                         
                         Button(action: {
+                            self.isSelected = [Bool](repeating: false, count: 8)
+                            self.isSelected[index] = true
+                            mbtiClicked = mbti[index]
                         }) {
-                            Text("E")
+                            Text(mbti[index])
                                 .font(.system(size: 40, weight: .semibold))
-                                .foregroundColor(Color.black)
+                                .foregroundColor(self.isSelected[index] ? Color.white : Color.black)
                                 .padding()
                         }
                         .frame(width: width, height: width)
-                        .background(Color.white)
+                        .background(self.isSelected[index] ? Color.pointColor : Color.white)
                         .cornerRadius(30)
                         .background(Color.black
                             .opacity(0.04)

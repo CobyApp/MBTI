@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ActivityListView: View {
     
+    @State private var mbtiClicked: String = ""
+    @State private var isSelected = [true] + [Bool](repeating: false, count: 7)
+    
+    private let mbti = ["E", "I", "N", "S", "F", "T", "J", "P"]    
     private let width = (UIScreen.main.bounds.width - 88) / 8
     
     var body: some View {
@@ -23,16 +27,19 @@ struct ActivityListView: View {
                     .padding()
                 
                 HStack {
-                    ForEach(0 ..< 8) { _ in
+                    ForEach(0 ..< 8) { index in
                         
                         Button(action: {
+                            self.isSelected = [Bool](repeating: false, count: 8)
+                            self.isSelected[index] = true
+                            mbtiClicked = mbti[index]
                         }) {
-                            Text("E")
+                            Text(mbti[index])
                                 .font(.system(size: 16, weight: .semibold))
-                                .foregroundColor(Color.black)
+                                .foregroundColor(self.isSelected[index] ? Color.white : Color.black)
                         }
                         .frame(width: width, height: width)
-                        .background(Color.white)
+                        .background(self.isSelected[index] ? Color.pointColor : Color.white)
                         .cornerRadius(30)
                         .background(Color.black
                             .opacity(0.04)
