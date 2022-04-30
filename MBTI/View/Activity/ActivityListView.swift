@@ -37,16 +37,15 @@ struct ActivityListView: View {
                             Text(mbti[index])
                                 .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(self.isSelected[index] ? Color.white : Color.black)
+                                .frame(width: width, height: width)
+                                .background(self.isSelected[index] ? Color.pointColor : Color.white)
+                                .cornerRadius(30)
+                                .background(Color.black
+                                    .opacity(0.04)
+                                    .shadow(color: .black, radius: 30, x: 0, y: 4)
+                                    .blur(radius: 10, opaque: false)
+                                )
                         }
-                        .frame(width: width, height: width)
-                        .background(self.isSelected[index] ? Color.pointColor : Color.white)
-                        .cornerRadius(30)
-                        .background(Color.black
-                            .opacity(0.04)
-                            .shadow(color: .black, radius: 30, x: 0, y: 4)
-                            .blur(radius: 10, opaque: false)
-                        )
-                        
                     }
                 }
                 .padding(.horizontal)
