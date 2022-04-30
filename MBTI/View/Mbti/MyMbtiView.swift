@@ -20,8 +20,6 @@ struct MyMbtiView: View {
                 MyMbtiCell()
                     .padding([.top, .horizontal])
                 
-                MenuCell(guide: "목표 MBTI 변경하기")
-                
                 Text("MBTI 수치")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.black)
@@ -34,6 +32,15 @@ struct MyMbtiView: View {
                     }
                 })
                 .padding(.horizontal)
+                
+                Text("MBTI 재설정")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(Color.black)
+                    .padding(.horizontal)
+                    .padding(.top, 40)
+                
+                MenuCell(guide: "현재 MBTI 변경하기")
+                MenuCell(guide: "목표 MBTI 변경하기")
   
             }
         }
