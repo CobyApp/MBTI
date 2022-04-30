@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import CoreData
 
 struct Activity {
     
-    let mbti: String
-    let act: String
+    var symbol: String
+    var act: String
     var effect: Int
 
 }

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CB856E74281CD559005DEDB3 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB856E73281CD559005DEDB3 /* StarRatingView.swift */; };
-		CB955D93281D08820088F9CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB955D92281D08820088F9CD /* User.swift */; };
-		CB955D95281D0A500088F9CD /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB955D94281D0A500088F9CD /* Activity.swift */; };
 		CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51933281B7C73003291F5 /* MBTIApp.swift */; };
 		CBA51936281B7C73003291F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51935281B7C73003291F5 /* ContentView.swift */; };
 		CBA51938281B7C74003291F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA51937281B7C74003291F5 /* Assets.xcassets */; };
@@ -21,7 +19,6 @@
 		CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5195B281B8387003291F5 /* MyMbtiView.swift */; };
 		CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5195D281B83DB003291F5 /* HomeView.swift */; };
 		CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51960281B848F003291F5 /* CoreDataManager.swift */; };
-		CBA51963281B86BF003291F5 /* MbtiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51962281B86BF003291F5 /* MbtiViewModel.swift */; };
 		CBA51965281B915B003291F5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51964281B915B003291F5 /* MenuCell.swift */; };
 		CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51968281B9281003291F5 /* TodayActivityView.swift */; };
 		CBA51974281C3BD4003291F5 /* TodayMbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */; };
@@ -32,8 +29,6 @@
 
 /* Begin PBXFileReference section */
 		CB856E73281CD559005DEDB3 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
-		CB955D92281D08820088F9CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CB955D94281D0A500088F9CD /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CBA51930281B7C73003291F5 /* MBTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA51933281B7C73003291F5 /* MBTIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTIApp.swift; sourceTree = "<group>"; };
 		CBA51935281B7C73003291F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,7 +41,6 @@
 		CBA5195B281B8387003291F5 /* MyMbtiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMbtiView.swift; sourceTree = "<group>"; };
 		CBA5195D281B83DB003291F5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CBA51960281B848F003291F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		CBA51962281B86BF003291F5 /* MbtiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiViewModel.swift; sourceTree = "<group>"; };
 		CBA51964281B915B003291F5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		CBA51968281B9281003291F5 /* TodayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayActivityView.swift; sourceTree = "<group>"; };
 		CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMbtiCell.swift; sourceTree = "<group>"; };
@@ -86,9 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA51949281B7CCA003291F5 /* Utils */,
-				CBA51948281B7CC0003291F5 /* ViewModel */,
 				CBA51947281B7CBB003291F5 /* View */,
-				CBA51946281B7CB3003291F5 /* Model */,
 				CBA51933281B7C73003291F5 /* MBTIApp.swift */,
 				CBA51937281B7C74003291F5 /* Assets.xcassets */,
 				CBA5193E281B7C74003291F5 /* MBTI.xcdatamodeld */,
@@ -105,15 +97,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CBA51946281B7CB3003291F5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CB955D92281D08820088F9CD /* User.swift */,
-				CB955D94281D0A500088F9CD /* Activity.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CBA51947281B7CBB003291F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,14 +106,6 @@
 				CBA5194A281B7D0A003291F5 /* Main */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		CBA51948281B7CC0003291F5 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				CBA51962281B86BF003291F5 /* MbtiViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CBA51949281B7CCA003291F5 /* Utils */ = {
@@ -259,15 +234,12 @@
 				CBA51980281C49AC003291F5 /* ColorExtension.swift in Sources */,
 				CBA51978281C3FB9003291F5 /* MbtiTuneCell.swift in Sources */,
 				CBA51969281B9281003291F5 /* TodayActivityView.swift in Sources */,
-				CBA51963281B86BF003291F5 /* MbtiViewModel.swift in Sources */,
 				CBA51952281B7FEA003291F5 /* UploadActivityView.swift in Sources */,
-				CB955D95281D0A500088F9CD /* Activity.swift in Sources */,
 				CBA51974281C3BD4003291F5 /* TodayMbtiCell.swift in Sources */,
 				CBA5195C281B8387003291F5 /* MyMbtiView.swift in Sources */,
 				CBA51976281C3BE2003291F5 /* MyMbtiCell.swift in Sources */,
 				CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */,
 				CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */,
-				CB955D93281D08820088F9CD /* User.swift in Sources */,
 				CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */,
 				CBA5195A281B837B003291F5 /* SetMbtiView.swift in Sources */,
 				CB856E74281CD559005DEDB3 /* StarRatingView.swift in Sources */,

@@ -12,12 +12,29 @@ struct UploadActivityView: View {
     @State private var mbtiClicked: String = ""
     @State private var isSelected = [Bool](repeating: false, count: 8)
     
-    @State private var activity: String = ""
+    @State private var newActivity: String = ""
     @State private var rating: Int = 0
     
     private let mbti = ["E", "I", "N", "S", "F", "T", "J", "P"]
     private let items = [GridItem(), GridItem(), GridItem(), GridItem()]
     private let width = (UIScreen.main.bounds.width - 56) / 4
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    private func saveActivity() {
+        
+        do {
+            let activity = Activity(context: viewContext)
+            activity.goal = mbtiClicked
+            activity.mission = newActivity
+            activity.effect = Int16(rating)
+            try viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
     
     var body: some View {
         
@@ -61,7 +78,7 @@ struct UploadActivityView: View {
                     .padding(.horizontal)
                     .padding(.top, 40)
                 
-                TextField("활동을 입력해주세요.", text: $activity)
+                TextField("활동을 입력해주세요.", text: $newActivity)
                     .font(.system(size: 16, weight: .regular))
                     .padding()
                     .frame(maxWidth: .infinity, maxHeight: 80)
@@ -86,6 +103,8 @@ struct UploadActivityView: View {
                 Spacer()
                 
                 Button(action: {
+                    saveActivity()
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("등록 완료")
                         .font(.system(size: 18, weight: .semibold))

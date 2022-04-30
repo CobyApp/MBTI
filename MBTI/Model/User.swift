@@ -11,9 +11,9 @@ struct User {
     
     var currentMbti: String
     var goalMbti: String
-    var EI: Int
-    var NS: Int
-    var FT: Int
-    var JP: Int
+    var ei: Int
+    var ns: Int
+    var ft: Int
+    var jp: Int
 
 }
