@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivityListView: View {
     
-    @State private var mbtiClicked: String = ""
+    @State private var mbtiClicked: String = "E"
     @State private var isSelected = [true] + [Bool](repeating: false, count: 7)
     
     private let mbti = ["E", "I", "N", "S", "F", "T", "J", "P"]
@@ -19,7 +19,8 @@ struct ActivityListView: View {
     
     @FetchRequest(
         entity: Activity.entity(),
-        sortDescriptors: []
+        sortDescriptors: [],
+        predicate: NSPredicate(format: "goal == %@", "E")
     ) var activities: FetchedResults<Activity>
     
     private func deleteActivity(at offsets: IndexSet) {
