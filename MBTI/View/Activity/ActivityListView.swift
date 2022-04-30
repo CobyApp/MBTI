@@ -50,6 +50,7 @@ struct ActivityListView: View {
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.black)
                     .padding()
+                    .padding(.top, 20)
                 
                 ForEach(0 ..< 8) { _ in
                     

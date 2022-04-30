@@ -10,6 +10,7 @@ import SwiftUI
 struct UploadActivityView: View {
     
     @State var activity: String = ""
+    @State var rating: Int = 0
     
     private let items = [GridItem(), GridItem(), GridItem(), GridItem()]
     
@@ -50,7 +51,8 @@ struct UploadActivityView: View {
                 Text("활동 입력")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.black)
-                    .padding()
+                    .padding(.horizontal)
+                    .padding(.top, 40)
                 
                 TextField("활동을 입력해주세요.", text: $activity)
                     .font(.system(size: 16, weight: .regular))
@@ -68,6 +70,10 @@ struct UploadActivityView: View {
                 Text("활동 중요도")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.black)
+                    .padding()
+                    .padding(.top, 20)
+                
+                StarRatingView(rating: $rating)
                     .padding()
                 
                 Spacer()

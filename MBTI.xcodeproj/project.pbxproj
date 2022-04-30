@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB856E74281CD559005DEDB3 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB856E73281CD559005DEDB3 /* StarRatingView.swift */; };
 		CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51933281B7C73003291F5 /* MBTIApp.swift */; };
 		CBA51936281B7C73003291F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51935281B7C73003291F5 /* ContentView.swift */; };
 		CBA51938281B7C74003291F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA51937281B7C74003291F5 /* Assets.xcassets */; };
@@ -24,11 +25,11 @@
 		CBA51974281C3BD4003291F5 /* TodayMbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */; };
 		CBA51976281C3BE2003291F5 /* MyMbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */; };
 		CBA51978281C3FB9003291F5 /* MbtiTuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */; };
-		CBA5197E281C462C003291F5 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5197D281C462C003291F5 /* PieChart.swift */; };
 		CBA51980281C49AC003291F5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5197F281C49AC003291F5 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB856E73281CD559005DEDB3 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		CBA51930281B7C73003291F5 /* MBTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA51933281B7C73003291F5 /* MBTIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTIApp.swift; sourceTree = "<group>"; };
 		CBA51935281B7C73003291F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMbtiCell.swift; sourceTree = "<group>"; };
 		CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMbtiCell.swift; sourceTree = "<group>"; };
 		CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiTuneCell.swift; sourceTree = "<group>"; };
-		CBA5197D281C462C003291F5 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		CBA5197F281C49AC003291F5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +171,7 @@
 				CBA51973281C3BD4003291F5 /* TodayMbtiCell.swift */,
 				CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */,
 				CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */,
-				CBA5197D281C462C003291F5 /* PieChart.swift */,
+				CB856E73281CD559005DEDB3 /* StarRatingView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -247,7 +247,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBA51940281B7C74003291F5 /* MBTI.xcdatamodeld in Sources */,
-				CBA5197E281C462C003291F5 /* PieChart.swift in Sources */,
 				CBA51936281B7C73003291F5 /* ContentView.swift in Sources */,
 				CBA51965281B915B003291F5 /* MenuCell.swift in Sources */,
 				CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */,
@@ -263,6 +262,7 @@
 				CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */,
 				CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */,
 				CBA5195A281B837B003291F5 /* SetMbtiView.swift in Sources */,
+				CB856E74281CD559005DEDB3 /* StarRatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,3 +27,32 @@ struct MbtiTuneCell: View {
         
     }
 }
+
+struct PieChart : View {
+    
+    let symbol: String
+    
+    var body: some View {
+        
+        VStack {
+            ZStack {
+                
+                Circle()
+                    .trim(from: 0, to: 0.7)
+                    .stroke(Color.pointColor, lineWidth: 10)
+                
+                Circle()
+                    .trim(from: 0.7, to: 1)
+                    .stroke(Color(hex: "#FF5757"), lineWidth: 10)
+                
+                Text(symbol)
+                    .font(.system(size: 40, weight: .semibold))
+                    .foregroundColor(Color.black)
+                
+            }
+            .frame(maxWidth: .infinity)
+            .aspectRatio(1.0, contentMode: .fit)
+        }
+        
+    }
+}
