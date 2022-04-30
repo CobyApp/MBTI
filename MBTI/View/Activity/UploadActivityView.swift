@@ -15,7 +15,7 @@ struct UploadActivityView: View {
     @State private var newActivity: String = ""
     @State private var rating: Int = 0
     
-    private let mbti = ["E", "I", "N", "S", "F", "T", "J", "P"]
+    private let mbti = ["E", "I", "N", "S", "T", "F", "J", "P"]
     private let items = [GridItem(), GridItem(), GridItem(), GridItem()]
     private let width = (UIScreen.main.bounds.width - 56) / 4
     

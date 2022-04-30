@@ -12,7 +12,7 @@ struct ShowActivityView: View {
     @State private var mbtiClicked: String = "E"
     @State private var isSelected = [true] + [Bool](repeating: false, count: 7)
     
-    private let mbti = ["E", "I", "N", "S", "F", "T", "J", "P"]
+    private let mbti = ["E", "I", "N", "S", "T", "F", "J", "P"]
     private let width = (UIScreen.main.bounds.width - 88) / 8
     
     var body: some View {
