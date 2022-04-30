@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActivityListView: View {
+struct ShowActivityView: View {
     
     @State private var mbtiClicked: String = "E"
     @State private var isSelected = [true] + [Bool](repeating: false, count: 7)
@@ -15,29 +15,7 @@ struct ActivityListView: View {
     private let mbti = ["E", "I", "N", "S", "F", "T", "J", "P"]
     private let width = (UIScreen.main.bounds.width - 88) / 8
     
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-        entity: Activity.entity(),
-        sortDescriptors: [],
-        predicate: NSPredicate(format: "goal == %@", "E")
-    ) var activities: FetchedResults<Activity>
-    
-    private func deleteActivity(at offsets: IndexSet) {
-        offsets.forEach { index in
-            let activity = activities[index]
-            viewContext.delete(activity)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
     var body: some View {
-        
         
         VStack(alignment: .leading) {
             
@@ -65,27 +43,11 @@ struct ActivityListView: View {
             }
             .padding(.horizontal)
             
-            List {
-                
-                ForEach(activities) { activity in
-                    Text(activity.mission ?? "")
-                        .font(.system(size: 16, weight: .regular))
-                        .foregroundColor(Color.black)
-                        .frame(maxWidth: .infinity, maxHeight: 80, alignment: .leading)
-                }.onDelete(perform: deleteActivity)
-                
-            }
-            .listRowBackground(Color.clear)
+            ActivityListView(filter: mbtiClicked)
             
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text("활동 둘러보기"))
         
-    }
-}
-
-struct ActivityListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivityListView()
     }
 }

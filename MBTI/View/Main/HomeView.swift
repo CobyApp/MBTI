@@ -42,7 +42,7 @@ struct HomeView: View {
                     }
                     
                     NavigationLink {
-                        ActivityListView()
+                        ShowActivityView()
                     } label: {
                         MenuCell(guide: "다른 활동 둘러보기")
                     }
