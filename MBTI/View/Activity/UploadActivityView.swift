@@ -13,6 +13,7 @@ struct UploadActivityView: View {
     @State var rating: Int = 0
     
     private let items = [GridItem(), GridItem(), GridItem(), GridItem()]
+    private let width = (UIScreen.main.bounds.width - 56) / 4
     
     var body: some View {
         
@@ -35,8 +36,7 @@ struct UploadActivityView: View {
                                 .foregroundColor(Color.black)
                                 .padding()
                         }
-                        .frame(maxWidth: .infinity)
-                        .aspectRatio(1.0, contentMode: .fit)
+                        .frame(width: width, height: width)
                         .background(Color.white)
                         .cornerRadius(30)
                         .background(Color.black
@@ -70,8 +70,8 @@ struct UploadActivityView: View {
                 Text("활동 중요도")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.black)
-                    .padding()
-                    .padding(.top, 20)
+                    .padding(.horizontal)
+                    .padding(.top, 40)
                 
                 StarRatingView(rating: $rating)
                     .padding()
@@ -92,6 +92,7 @@ struct UploadActivityView: View {
                             .shadow(color: .black, radius: 20, x: 0, y: 4)
                             .blur(radius: 10, opaque: false)
                         )
+                        .padding(.top, 40)
                 }
                 .padding()
                 

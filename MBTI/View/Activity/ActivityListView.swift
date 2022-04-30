@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivityListView: View {
     
-    private let width = UIScreen.main.bounds.width / 8
+    private let width = (UIScreen.main.bounds.width - 88) / 8
     
     var body: some View {
         
@@ -28,12 +28,10 @@ struct ActivityListView: View {
                         Button(action: {
                         }) {
                             Text("E")
-                                .font(.system(size: 20, weight: .semibold))
+                                .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(Color.black)
-                                .padding()
                         }
-                        .frame(maxWidth: width)
-                        .aspectRatio(1.0, contentMode: .fit)
+                        .frame(width: width, height: width)
                         .background(Color.white)
                         .cornerRadius(30)
                         .background(Color.black
