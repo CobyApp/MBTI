@@ -17,8 +17,12 @@ struct MyMbtiView: View {
             
             VStack(alignment: .leading) {
                 
-                MyMbtiCell()
-                    .padding([.top, .horizontal])
+                NavigationLink {
+                    SetMbtiView()
+                } label: {
+                    MyMbtiCell()
+                        .padding([.top, .horizontal])
+                }
                 
                 Text("MBTI 수치")
                     .font(.system(size: 20, weight: .semibold))
@@ -32,15 +36,6 @@ struct MyMbtiView: View {
                     }
                 })
                 .padding(.horizontal)
-                
-                Text("MBTI 재설정")
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(Color.black)
-                    .padding(.horizontal)
-                    .padding(.top, 40)
-                
-                MenuCell(guide: "현재 MBTI 변경하기")
-                MenuCell(guide: "목표 MBTI 변경하기")
   
             }
         }

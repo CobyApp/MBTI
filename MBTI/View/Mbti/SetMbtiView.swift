@@ -8,8 +8,91 @@
 import SwiftUI
 
 struct SetMbtiView: View {
+    
+    @State private var currentValue = 6.0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView() {
+            
+            VStack(alignment: .leading) {
+                
+                Text("현재 MBTI 수치")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(Color.black)
+                    .padding()
+                
+                HStack {
+                    
+                    Text("E")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                    SliderView(value: $currentValue)
+                        .frame(maxWidth: .infinity, maxHeight: 30)
+                    
+                    Text("F")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                }.padding()
+                
+                HStack {
+                    
+                    Text("E")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                    SliderView(value: $currentValue)
+                        .frame(maxWidth: .infinity, maxHeight: 30)
+                    
+                    Text("F")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                }.padding()
+                
+                HStack {
+                    
+                    Text("E")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                    SliderView(value: $currentValue)
+                        .frame(maxWidth: .infinity, maxHeight: 30)
+                    
+                    Text("F")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                }.padding()
+                
+                HStack {
+                    
+                    Text("E")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                    SliderView(value: $currentValue)
+                        .frame(maxWidth: .infinity, maxHeight: 30)
+                    
+                    Text("F")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                }.padding()
+                
+            }
+        }
+        
     }
 }
 

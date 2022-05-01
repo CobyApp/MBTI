@@ -26,6 +26,7 @@
 		CBA51976281C3BE2003291F5 /* MyMbtiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */; };
 		CBA51978281C3FB9003291F5 /* MbtiTuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */; };
 		CBA51980281C49AC003291F5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5197F281C49AC003291F5 /* ColorExtension.swift */; };
+		CBFD3B0F281E860800770E6D /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFD3B0E281E860800770E6D /* SliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		CBA51975281C3BE2003291F5 /* MyMbtiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMbtiCell.swift; sourceTree = "<group>"; };
 		CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MbtiTuneCell.swift; sourceTree = "<group>"; };
 		CBA5197F281C49AC003291F5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		CBFD3B0E281E860800770E6D /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */,
 				CB856E73281CD559005DEDB3 /* StarRatingView.swift */,
 				CBA51955281B82E9003291F5 /* ActivityListView.swift */,
+				CBFD3B0E281E860800770E6D /* SliderView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				CBA51940281B7C74003291F5 /* MBTI.xcdatamodeld in Sources */,
 				CBA51936281B7C73003291F5 /* ContentView.swift in Sources */,
 				CBA51965281B915B003291F5 /* MenuCell.swift in Sources */,
+				CBFD3B0F281E860800770E6D /* SliderView.swift in Sources */,
 				CBA5195E281B83DB003291F5 /* HomeView.swift in Sources */,
 				CBA51980281C49AC003291F5 /* ColorExtension.swift in Sources */,
 				CBA51978281C3FB9003291F5 /* MbtiTuneCell.swift in Sources */,

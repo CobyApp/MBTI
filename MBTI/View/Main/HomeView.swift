@@ -15,19 +15,17 @@ struct HomeView: View {
                 
                 VStack(alignment: .leading) {
                     
-                    TodayMbtiCell()
-                        .padding()
+                    NavigationLink {
+                        MyMbtiView()
+                    } label: {
+                        TodayMbtiCell()
+                            .padding()
+                    }
                     
                     Text(Date(), style: .date)
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color.black)
                         .padding()
-                    
-                    NavigationLink {
-                        MyMbtiView()
-                    } label: {
-                        MenuCell(guide: "나의 MBTI 분석하기")
-                    }
                     
                     NavigationLink {
                         TodayActivityView()
