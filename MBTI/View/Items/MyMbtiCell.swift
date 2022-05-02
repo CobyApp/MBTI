@@ -12,7 +12,12 @@ struct MyMbtiCell: View{
     var currentMbti: String
     var goalMbti: String
     
-    let randomInt = Int.random(in: 0..<4)
+    let randomInt1 = Int.random(in: 0..<4)
+    let randomInt2 = Int.random(in: 0..<4)
+    let randomInt3 = Int.random(in: 0..<4)
+    
+    let comment1 = ["오늘은", "오늘 하루는", "열심히", "즐겁게"]
+    let comment2 = ["활동을 좀 더 해보세요.", "수치를 채워봐요.", "활동을 잘 하고 있어요.", " 활동을 도전해보세요."]
     
     var body: some View{
        
@@ -32,7 +37,7 @@ struct MyMbtiCell: View{
             
             Divider()
             
-            Text("\(String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: randomInt)])) 활동을 좀 더 해보세요.")
+            Text("\(comment1[randomInt1]) \(String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: randomInt2)])) \(comment2[randomInt3])")
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Color.black)
                 .padding()
