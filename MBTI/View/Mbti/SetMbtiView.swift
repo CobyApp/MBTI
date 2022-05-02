@@ -103,6 +103,7 @@ struct SetMbtiView: View {
                     
                     Slider(value: $ns, in: 0...100, step: 1)
                         .padding(.horizontal)
+                        .padding(.top, 10)
                         .accentColor(Color.pointColor)
                     
                     Text("S")
@@ -121,6 +122,7 @@ struct SetMbtiView: View {
                     
                     Slider(value: $tf, in: 0...100, step: 1)
                         .padding(.horizontal)
+                        .padding(.top, 10)
                         .accentColor(Color.pointColor)
                     
                     Text("F")
@@ -139,6 +141,7 @@ struct SetMbtiView: View {
                     
                     Slider(value: $jp, in: 0...100, step: 1)
                         .padding(.horizontal)
+                        .padding(.top, 10)
                         .accentColor(Color.pointColor)
                     
                     Text("P")
@@ -156,7 +159,7 @@ struct SetMbtiView: View {
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.black)
                     .padding()
-                    .padding(.top, 40)
+                    .padding(.top, 20)
                 
                 Picker("목표 MBTI를 선택해주세요.", selection: $selectedMbti) {
                     ForEach(mbtiList, id: \.self) {
@@ -190,7 +193,7 @@ struct SetMbtiView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(Text("MBTI 재설정"))
+        .navigationTitle(Text("MBTI 설정"))
     }
 }
 
