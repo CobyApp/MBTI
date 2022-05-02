@@ -15,7 +15,7 @@ struct MyMbtiCell: View{
     var commendIndex = Int(Calendar.current.dateComponents([.day], from: Date()).day ?? 0) % 4
     
     let comment1 = ["오늘은", "오늘 하루는", "열심히", "즐겁게"]
-    let comment2 = ["활동을 좀 더 해보세요.", "수치를 채워봐요.", "활동을 잘 하고 있어요.", " 활동을 도전해보세요."]
+    let comment2 = ["활동을 좀 더 해보세요.", "수치를 채워봐요.", "활동을 잘 하고 있어요.", "활동을 도전해보세요."]
     
     var body: some View{
        
