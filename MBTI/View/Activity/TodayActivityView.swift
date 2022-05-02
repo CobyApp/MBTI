@@ -12,6 +12,7 @@ struct TodayActivityView: View {
     var activityCheck: Bool {!activities.isEmpty}
     var day = Int(Calendar.current.dateComponents([.day], from: Date()).day ?? 0)
     var commendIndex: Int { day % activities.count }
+    var activity: Activity { activities[commendIndex] }
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -46,12 +47,12 @@ struct TodayActivityView: View {
                     
                     Spacer()
                     
-                    Text(activities[commendIndex].mission ?? "")
+                    Text(activity.mission ?? "")
                         .font(.system(size: 30, weight: .semibold))
                         .foregroundColor(Color.black)
                         .padding(.bottom, 50)
                     
-                    Text(String(Int(activities[commendIndex].effect)))
+                    Text(String(activity.effect))
                         .font(.system(size: 30, weight: .semibold))
                         .foregroundColor(Color.black)
                         .padding(.bottom, 50)
