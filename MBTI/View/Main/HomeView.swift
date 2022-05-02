@@ -15,7 +15,6 @@ struct HomeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest var user: FetchedResults<User>
     
-    
     init() {
         _user = FetchRequest<User>(sortDescriptors: [])
     }
@@ -34,8 +33,14 @@ struct HomeView: View {
                             SetMbtiView()
                         }
                     } label: {
-                        TodayMbtiCell(currentMbti: user[0].currentMbti ?? "설정 필요")
-                            .padding()
+                        if (userCheck) {
+                            TodayMbtiCell(currentMbti: user[0].currentMbti ?? "")
+                                .padding()
+                        } else {
+                            TodayMbtiCell(currentMbti: "설정 필요")
+                                .padding()
+                        }
+                        
                     }
                     
                     Text(Date(), style: .date)
