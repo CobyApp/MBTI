@@ -43,7 +43,7 @@ struct HomeView: View {
                         .padding()
                     
                     NavigationLink {
-                        TodayActivityView()
+                        TodayActivityView(goalMbti: user[0].goalMbti ?? "")
                     } label: {
                         MenuCell(guide: "오늘의 활동 추천받기")
                     }

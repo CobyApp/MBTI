@@ -9,14 +9,23 @@ import SwiftUI
 
 struct TodayActivityView: View {
     
+    var activityCheck: Bool {!activities.isEmpty}
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest var user: FetchedResults<User>
+    
     @FetchRequest var activities: FetchedResults<Activity>
     
-    init() {
-        _user = FetchRequest<User>(sortDescriptors: [])
-        _activities = FetchRequest<Activity>(sortDescriptors: [], predicate: NSPredicate(format: "goal == %@", "E"))
+    init(goalMbti: String) {
+        
+        let predicate1:NSPredicate = NSPredicate(format: "goal == %@", String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: 0)]))
+        let predicate2:NSPredicate = NSPredicate(format: "goal == %@", String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: 1)]))
+        let predicate3:NSPredicate = NSPredicate(format: "goal == %@", String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: 2)]))
+        let predicate4:NSPredicate = NSPredicate(format: "goal == %@", String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: 3)]))
+        
+        
+        _activities = FetchRequest<Activity>(sortDescriptors: [], predicate: NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2, predicate3, predicate4]))
     }
     
     var body: some View {
@@ -60,11 +69,5 @@ struct TodayActivityView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text("오늘의 활동"))
         
-    }
-}
-
-struct TodayActivityView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodayActivityView()
     }
 }
