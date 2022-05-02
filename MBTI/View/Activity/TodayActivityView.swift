@@ -63,6 +63,7 @@ struct TodayActivityView: View {
         }
         
         user.currentMbti = (user.ei < 50 ? "E" : "I") + (user.ns < 50 ? "N" : "S") + (user.tf < 50 ? "T" : "F") + (user.jp < 50 ? "J" : "P")
+        user.today = Date()
         
         do {
             try viewContext.save()

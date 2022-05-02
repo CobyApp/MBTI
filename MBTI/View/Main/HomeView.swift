@@ -10,6 +10,13 @@ import SwiftUI
 struct HomeView: View {
     
     var userCheck: Bool {!user.isEmpty}
+    var todayCheck: Bool {
+        !(Calendar.current.dateComponents([.day], from: Date()).year == Calendar.current.dateComponents([.day], from: user[0].today!).year
+        &&
+        Calendar.current.dateComponents([.day], from: Date()).month == Calendar.current.dateComponents([.day], from: user[0].today!).month
+        &&
+        Calendar.current.dateComponents([.day], from: Date()).day == Calendar.current.dateComponents([.day], from: user[0].today!).day)
+    }
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
@@ -48,7 +55,7 @@ struct HomeView: View {
                         .foregroundColor(Color.black)
                         .padding()
                     
-                    if (userCheck) {
+                    if (userCheck && todayCheck) {
                     
                         NavigationLink {
                             TodayActivityView(goalMbti: user[0].goalMbti ?? "")
