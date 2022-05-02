@@ -11,10 +11,10 @@ struct SetMbtiView: View {
     
     var userCheck: Bool {!user.isEmpty}
     
-    @State private var ei = 0.0
-    @State private var ns = 0.0
-    @State private var tf = 0.0
-    @State private var jp = 0.0
+    @State private var ei = 50.0
+    @State private var ns = 50.0
+    @State private var tf = 50.0
+    @State private var jp = 50.0
     
     var mbtiList = ["ENFJ", "ENTJ", "ENFP", "ENTP", "ESFP", "ESFJ", "ESTP", "ESTJ", "INFP", "INFJ", "INTP", "ISTP", "ISFP", "ISFJ", "ISTJ", "INTJ"]
     @State var selectedMbti = "ENFJ"
@@ -34,6 +34,7 @@ struct SetMbtiView: View {
             user.jp = jp
             user.currentMbti = (ei < 50 ? "E" : "I") + (ns < 50 ? "N" : "S") + (tf < 50 ? "T" : "F") + (jp < 50 ? "J" : "P")
             user.goalMbti = selectedMbti
+            user.today = Date(timeIntervalSince1970: 300)
             
             try viewContext.save()
         } catch {
