@@ -65,136 +65,132 @@ struct SetMbtiView: View {
     }
     
     var body: some View {
-        
-        ScrollView() {
+            
+        VStack(alignment: .leading) {
             
             VStack(alignment: .leading) {
                 
-                VStack(alignment: .leading) {
+                Text("현재 MBTI")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(Color.black)
+                    .padding()
+                
+                HStack {
                     
-                    Text("현재 MBTI")
+                    Text("E")
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color.black)
-                        .padding()
+                        .frame(width: 20)
                     
-                    HStack {
-                        
-                        Text("E")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                        Slider(value: $ei, in: 0...100, step: 1)
-                            .padding()
-                            .accentColor(Color.pointColor)
-                            .foregroundColor(Color(hex: "#FF5757"))
-                        
-                        Text("I")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                    }.padding(.horizontal)
+                    Slider(value: $ei, in: 0...100, step: 1)
+                        .padding(.horizontal)
+                        .accentColor(Color.pointColor)
+                        .foregroundColor(Color(hex: "#FF5757"))
                     
-                    HStack {
-                        
-                        Text("N")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                        Slider(value: $ns, in: 0...100, step: 1)
-                            .padding()
-                            .accentColor(Color.pointColor)
-                        
-                        Text("S")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                    }.padding(.horizontal)
-                    
-                    HStack {
-                        
-                        Text("T")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                        Slider(value: $tf, in: 0...100, step: 1)
-                            .padding()
-                            .accentColor(Color.pointColor)
-                        
-                        Text("F")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                    }.padding(.horizontal)
-                    
-                    HStack {
-                        
-                        Text("J")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                        Slider(value: $jp, in: 0...100, step: 1)
-                            .padding()
-                            .accentColor(Color.pointColor)
-                        
-                        Text("P")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(Color.black)
-                            .frame(width: 20)
-                        
-                    }.padding(.horizontal)
-                    
-                }
-                
-                VStack(alignment: .leading) {
-                
-                    Text("목표 MBTI ")
+                    Text("I")
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color.black)
-                        .padding()
+                        .frame(width: 20)
                     
-                    Picker("목표 MBTI를 선택해주세요.", selection: $selectedMbti) {
-                        ForEach(mbtiList, id: \.self) {
-                            Text($0)
-                        }
+                }.padding(.horizontal)
+                
+                HStack {
+                    
+                    Text("N")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                    Slider(value: $ns, in: 0...100, step: 1)
+                        .padding(.horizontal)
+                        .accentColor(Color.pointColor)
+                    
+                    Text("S")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                }.padding(.horizontal)
+                
+                HStack {
+                    
+                    Text("T")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                    Slider(value: $tf, in: 0...100, step: 1)
+                        .padding(.horizontal)
+                        .accentColor(Color.pointColor)
+                    
+                    Text("F")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                }.padding(.horizontal)
+                
+                HStack {
+                    
+                    Text("J")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                    Slider(value: $jp, in: 0...100, step: 1)
+                        .padding(.horizontal)
+                        .accentColor(Color.pointColor)
+                    
+                    Text("P")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .frame(width: 20)
+                    
+                }.padding(.horizontal)
+                
+            }
+            
+            VStack(alignment: .leading) {
+            
+                Text("목표 MBTI ")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(Color.black)
+                    .padding()
+                    .padding(.top, 40)
+                
+                Picker("목표 MBTI를 선택해주세요.", selection: $selectedMbti) {
+                    ForEach(mbtiList, id: \.self) {
+                        Text($0)
                     }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(maxHeight: 100)
-                    
                 }
+                .pickerStyle(WheelPickerStyle())
+                .frame(maxHeight: .infinity)
                 
-                Button(action: {
-                    userCheck ? updateUser(user[0]) : saveUser()
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("설정 완료")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(Color.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 60)
-                        .background(Color.black)
-                        .cornerRadius(20)
-                        .background(Color.black
-                            .opacity(0.05)
-                            .shadow(color: .black, radius: 20, x: 0, y: 4)
-                            .blur(radius: 10, opaque: false)
-                        )
-                        .padding()
-                        .padding(.top, 40)
-                }
-                
+            }
+            
+            Button(action: {
+                userCheck ? updateUser(user[0]) : saveUser()
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("설정 완료")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
+                    .background(Color.black)
+                    .cornerRadius(20)
+                    .background(Color.black
+                        .opacity(0.05)
+                        .shadow(color: .black, radius: 20, x: 0, y: 4)
+                        .blur(radius: 10, opaque: false)
+                    )
+                    .padding()
+                    .padding(.top, 40)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text("MBTI 재설정"))
-        
     }
 }
 
