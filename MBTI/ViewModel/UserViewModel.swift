@@ -1,20 +1,20 @@
 //
-//  Chart.swift
+//  UserViewModel.swift
 //  MBTI
 //
-//  Created by COBY_PRO on 2022/04/30.
+//  Created by COBY_PRO on 2022/05/02.
 //
 
 import SwiftUI
 
-struct Chart: View {
+struct UserViewModel: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct Chart_Previews: PreviewProvider {
+struct UserViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        Chart()
+        UserViewModel()
     }
 }

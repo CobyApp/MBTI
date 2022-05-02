@@ -19,15 +19,39 @@ struct SetMbtiView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest var user: FetchedResults<User>
+    
+    private func saveUser() {
+        
+        do {
+            let user = User(context: viewContext)
+            
+            user.ei = ei
+            user.ns = ns
+            user.tf = tf
+            user.jp = jp
+            user.currentMbti = (ei < 50 ? "E" : "J") + (ns < 50 ? "N" : "S") + (tf < 50 ? "T" : "F") + (jp < 50 ? "J" : "P")
+            user.goalMbti = selectedMbti
+            try viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    private func updateTask() {
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.gray
+        _user = FetchRequest<User>(sortDescriptors: [])
         
-        let attributes: [NSAttributedString.Key:Any] = [
-            //원하는 색상
-            .foregroundColor : UIColor.white
-        ]
-        UISegmentedControl.appearance().setTitleTextAttributes(attributes, for: .selected)
+        // self._ei = State(initialValue: _user.ei)
     }
     
     var body: some View {

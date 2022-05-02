@@ -15,6 +15,19 @@ struct ActivityListView: View {
     
     init(filter: String) {
         _activities = FetchRequest<Activity>(sortDescriptors: [], predicate: NSPredicate(format: "goal == %@", filter))
+        
+        do {
+            let result = try viewContext.fetch(_activities)
+            if result.isEmpty {
+                print("data not exist")
+                return
+            } else {
+                print("data exist")
+            }
+            
+        } catch {
+            print(error)
+        }
     }
     
     private func deleteActivity(at offsets: IndexSet) {
