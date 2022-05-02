@@ -108,7 +108,7 @@ struct TodayActivityView: View {
                         .padding(.vertical, 50)
                     
                     Text(activity.mission ?? "")
-                        .font(.system(size: 30, weight: .semibold))
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color.black)
                         .padding()
                     

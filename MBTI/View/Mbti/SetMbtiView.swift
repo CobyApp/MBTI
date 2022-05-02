@@ -51,6 +51,7 @@ struct SetMbtiView: View {
         user.jp = jp
         user.currentMbti = (ei < 50 ? "E" : "I") + (ns < 50 ? "N" : "S") + (tf < 50 ? "T" : "F") + (jp < 50 ? "J" : "P")
         user.goalMbti = selectedMbti
+        user.today = Date(timeIntervalSince1970: 300)
         
         do {
             try viewContext.save()
@@ -162,7 +163,9 @@ struct SetMbtiView: View {
                         ForEach(mbtiList, id: \.self) {
                             Text($0)
                         }
-                    }.pickerStyle(WheelPickerStyle())
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(maxHeight: 100)
                     
                 }
                 
@@ -184,6 +187,7 @@ struct SetMbtiView: View {
                             .blur(radius: 10, opaque: false)
                         )
                         .padding()
+                        .padding(.top, 40)
                 }
                 
             }
