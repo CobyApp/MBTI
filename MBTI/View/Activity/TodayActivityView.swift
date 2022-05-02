@@ -32,40 +32,39 @@ struct TodayActivityView: View {
     
     private func updateUser(_ user: User) {
         
-        do {
+        switch activity.goal {
             
-            let user = User(context: viewContext)
+        case "E":
+            user.ei = (user.ei - Double(activity.effect) < 0) ? 0 : (user.ei - Double(activity.effect))
             
-            switch activity.goal {
-                
-            case "E":
-                user.ei = (user.ei - Double(activity.effect) < 0) ? 0 : (user.ei - Double(activity.effect))
-                
-            case "I":
-                user.ei = (user.ei + Double(activity.effect) > 100) ? 100 : (user.ei + Double(activity.effect))
-                                                                             
-            case "N":
-                user.ns = (user.ns - Double(activity.effect) < 0) ? 0 : (user.ns - Double(activity.effect))
-                 
-            case "S":
-                user.ns = (user.ns + Double(activity.effect) > 100) ? 100 : (user.ns + Double(activity.effect))
+        case "I":
+            user.ei = (user.ei + Double(activity.effect) > 100) ? 100 : (user.ei + Double(activity.effect))
+                                                                         
+        case "N":
+            user.ns = (user.ns - Double(activity.effect) < 0) ? 0 : (user.ns - Double(activity.effect))
+             
+        case "S":
+            user.ns = (user.ns + Double(activity.effect) > 100) ? 100 : (user.ns + Double(activity.effect))
 
-            case "T":
-                user.tf = (user.tf - Double(activity.effect) < 0) ? 0 : (user.tf - Double(activity.effect))
-                  
-            case "F":
-                user.tf = (user.tf + Double(activity.effect) > 100) ? 100 : (user.tf + Double(activity.effect))
-                                                                           
-            case "J":
-                user.jp = (user.jp - Double(activity.effect) < 0) ? 0 : (user.jp - Double(activity.effect))
-                   
-            case "P":
-                user.jp = (user.jp + Double(activity.effect) > 100) ? 100 : (user.jp + Double(activity.effect))
-            
-            default:
-                print("error")
-            }
-            
+        case "T":
+            user.tf = (user.tf - Double(activity.effect) < 0) ? 0 : (user.tf - Double(activity.effect))
+              
+        case "F":
+            user.tf = (user.tf + Double(activity.effect) > 100) ? 100 : (user.tf + Double(activity.effect))
+                                                                       
+        case "J":
+            user.jp = (user.jp - Double(activity.effect) < 0) ? 0 : (user.jp - Double(activity.effect))
+               
+        case "P":
+            user.jp = (user.jp + Double(activity.effect) > 100) ? 100 : (user.jp + Double(activity.effect))
+        
+        default:
+            print("error")
+        }
+        
+        user.currentMbti = (user.ei < 50 ? "E" : "I") + (user.ns < 50 ? "N" : "S") + (user.tf < 50 ? "T" : "F") + (user.jp < 50 ? "J" : "P")
+        
+        do {
             try viewContext.save()
         } catch {
             print(error.localizedDescription)
