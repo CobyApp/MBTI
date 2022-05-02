@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TodayMbtiCell: View{
     
+    var currentMbti: String
+    
     var body: some View{
        
         VStack(alignment: .center) {
@@ -18,7 +20,7 @@ struct TodayMbtiCell: View{
                 .scaledToFit()
                 .padding()
             
-            Text("ENFJ")
+            Text(currentMbti)
                 .font(.system(size: 40, weight: .semibold))
                 .foregroundColor(Color.black)
             

@@ -9,10 +9,13 @@ import SwiftUI
 
 struct MbtiTuneCell: View {
     
+    let symbol: String
+    let value: Double
+    
     var body: some View {
         
         VStack(alignment: .center) {
-            PieChart(symbol: "E")
+            PieChart(symbol: symbol, value: value)
         }
         .padding(30)
         .frame(maxWidth: .infinity)
@@ -31,6 +34,7 @@ struct MbtiTuneCell: View {
 struct PieChart : View {
     
     let symbol: String
+    let value: Double
     
     var body: some View {
         
@@ -38,11 +42,11 @@ struct PieChart : View {
             ZStack {
                 
                 Circle()
-                    .trim(from: 0, to: 0.7)
+                    .trim(from: 0, to: value / 100.0)
                     .stroke(Color.pointColor, lineWidth: 10)
                 
                 Circle()
-                    .trim(from: 0.7, to: 1)
+                    .trim(from: value / 100.0, to: 1)
                     .stroke(Color(hex: "#FF5757"), lineWidth: 10)
                 
                 Text(symbol)

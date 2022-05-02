@@ -9,17 +9,22 @@ import SwiftUI
 
 struct MyMbtiCell: View{
     
+    var currentMbti: String
+    var goalMbti: String
+    
+    let randomInt = Int.random(in: 0..<4)
+    
     var body: some View{
        
         VStack(alignment: .center) {
             
             HStack {
                 
-                MbtiVCell(time: "현재", mbti: "ENFJ")
+                MbtiVCell(time: "현재", mbti: currentMbti)
                 
                 Spacer()
                 
-                MbtiVCell(time: "목표", mbti: "ISTP")
+                MbtiVCell(time: "목표", mbti: goalMbti)
                 
             }
             .padding(.horizontal, 30)
@@ -27,7 +32,7 @@ struct MyMbtiCell: View{
             
             Divider()
             
-            Text("오늘은 I 활동을 좀 더 해보세요.")
+            Text("오늘은 \(goalMbti) 활동을 좀 더 해보세요.")
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Color.black)
                 .padding()

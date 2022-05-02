@@ -9,10 +9,12 @@ import SwiftUI
 
 struct SetMbtiView: View {
     
-    @State private var ei = 6.0
-    @State private var ns = 6.0
-    @State private var tf = 6.0
-    @State private var jp = 6.0
+    var userCheck: Bool {!user.isEmpty}
+    
+    @State private var ei = 0.0
+    @State private var ns = 0.0
+    @State private var tf = 0.0
+    @State private var jp = 0.0
     
     var mbtiList = ["ENFJ", "ENTJ", "ENFP", "ENTP", "ESFP", "ESFJ", "ESTP", "ESTJ", "INFP", "INFJ", "INTP", "ISTP", "ISFP", "ISFJ", "ISTJ", "INTJ"]
     @State var selectedMbti = "ENFJ"
@@ -30,8 +32,9 @@ struct SetMbtiView: View {
             user.ns = ns
             user.tf = tf
             user.jp = jp
-            user.currentMbti = (ei < 50 ? "E" : "J") + (ns < 50 ? "N" : "S") + (tf < 50 ? "T" : "F") + (jp < 50 ? "J" : "P")
+            user.currentMbti = (ei < 50 ? "E" : "I") + (ns < 50 ? "N" : "S") + (tf < 50 ? "T" : "F") + (jp < 50 ? "J" : "P")
             user.goalMbti = selectedMbti
+            
             try viewContext.save()
         } catch {
             print(error.localizedDescription)
@@ -39,7 +42,14 @@ struct SetMbtiView: View {
         
     }
     
-    private func updateTask() {
+    private func updateUser(_ user: User) {
+        
+        user.ei = ei
+        user.ns = ns
+        user.tf = tf
+        user.jp = jp
+        user.currentMbti = (ei < 50 ? "E" : "I") + (ns < 50 ? "N" : "S") + (tf < 50 ? "T" : "F") + (jp < 50 ? "J" : "P")
+        user.goalMbti = selectedMbti
         
         do {
             try viewContext.save()
@@ -50,8 +60,6 @@ struct SetMbtiView: View {
     
     init() {
         _user = FetchRequest<User>(sortDescriptors: [])
-        
-        // self._ei = State(initialValue: _user.ei)
     }
     
     var body: some View {
@@ -61,7 +69,7 @@ struct SetMbtiView: View {
             VStack(alignment: .leading) {
                 
                 VStack(alignment: .leading) {
-                
+                    
                     Text("현재 MBTI")
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color.black)
@@ -74,15 +82,16 @@ struct SetMbtiView: View {
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                        SliderView(value: $ei)
-                            .frame(maxWidth: .infinity, maxHeight: 30)
+                        Slider(value: $ei, in: 0...100, step: 1)
+                            .padding()
+                            .accentColor(Color.pointColor)
                         
                         Text("I")
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                    }.padding()
+                    }.padding(.horizontal)
                     
                     HStack {
                         
@@ -91,15 +100,16 @@ struct SetMbtiView: View {
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                        SliderView(value: $ns)
-                            .frame(maxWidth: .infinity, maxHeight: 30)
+                        Slider(value: $ns, in: 0...100, step: 1)
+                            .padding()
+                            .accentColor(Color.pointColor)
                         
                         Text("S")
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                    }.padding()
+                    }.padding(.horizontal)
                     
                     HStack {
                         
@@ -108,15 +118,16 @@ struct SetMbtiView: View {
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                        SliderView(value: $tf)
-                            .frame(maxWidth: .infinity, maxHeight: 30)
+                        Slider(value: $tf, in: 0...100, step: 1)
+                            .padding()
+                            .accentColor(Color.pointColor)
                         
                         Text("F")
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                    }.padding()
+                    }.padding(.horizontal)
                     
                     HStack {
                         
@@ -125,15 +136,16 @@ struct SetMbtiView: View {
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                        SliderView(value: $jp)
-                            .frame(maxWidth: .infinity, maxHeight: 30)
+                        Slider(value: $jp, in: 0...100, step: 1)
+                            .padding()
+                            .accentColor(Color.pointColor)
                         
                         Text("P")
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(Color.black)
                             .frame(width: 20)
                         
-                    }.padding()
+                    }.padding(.horizontal)
                     
                 }
                 
@@ -154,6 +166,7 @@ struct SetMbtiView: View {
                 .padding()
                 
                 Button(action: {
+                    userCheck ? updateUser(user[0]) : saveUser()
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("설정 완료")
@@ -174,6 +187,8 @@ struct SetMbtiView: View {
                 
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(Text("MBTI 재설정"))
         
     }
 }
