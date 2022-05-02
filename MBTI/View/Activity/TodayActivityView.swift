@@ -14,6 +14,23 @@ struct TodayActivityView: View {
     var commendIndex: Int { day % activities.count }
     var activity: Activity { activities[commendIndex] }
     
+    var rating: Int { Int(activity.effect) }
+    
+    var offImage: Image?
+    var onImage = Image(systemName: "star.fill")
+    
+    var offColor = Color(hex: "#C4C4C4")
+    var onColor = Color.pointColor
+    
+    func image(for number: Int) -> Image {
+        if number > rating {
+            return offImage ?? onImage
+        } else {
+            return onImage
+        }
+    }
+    
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -50,12 +67,16 @@ struct TodayActivityView: View {
                     Text(activity.mission ?? "")
                         .font(.system(size: 30, weight: .semibold))
                         .foregroundColor(Color.black)
-                        .padding(.bottom, 50)
+                        .padding()
                     
-                    Text(String(activity.effect))
-                        .font(.system(size: 30, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .padding(.bottom, 50)
+                    HStack {
+                        ForEach(1..<6, id: \.self) { number in
+                            image(for: number)
+                                .font(.system(size: 40))
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(number > rating ? offColor : onColor)
+                        }
+                    }.padding()
                     
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
