@@ -34,7 +34,7 @@ struct HomeView: View {
                             SetMbtiView()
                         }
                     } label: {
-                        TodayMbtiCell(currentMbti: userCheck ? user[0].currentMbti! : "설정 필요")
+                        TodayMbtiCell(currentMbti: user[0].currentMbti ?? "설정 필요")
                             .padding()
                     }
                     

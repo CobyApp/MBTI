@@ -31,9 +31,41 @@ struct TodayActivityView: View {
     }
     
     private func updateUser(_ user: User) {
-            
         
         do {
+            
+            let user = User(context: viewContext)
+            
+            switch activity.goal {
+                
+            case "E":
+                user.ei = (user.ei - Double(activity.effect) < 0) ? 0 : (user.ei - Double(activity.effect))
+                
+            case "I":
+                user.ei = (user.ei + Double(activity.effect) > 100) ? 100 : (user.ei + Double(activity.effect))
+                                                                             
+            case "N":
+                user.ns = (user.ns - Double(activity.effect) < 0) ? 0 : (user.ns - Double(activity.effect))
+                 
+            case "S":
+                user.ns = (user.ns + Double(activity.effect) > 100) ? 100 : (user.ns + Double(activity.effect))
+
+            case "T":
+                user.tf = (user.tf - Double(activity.effect) < 0) ? 0 : (user.tf - Double(activity.effect))
+                  
+            case "F":
+                user.tf = (user.tf + Double(activity.effect) > 100) ? 100 : (user.tf + Double(activity.effect))
+                                                                           
+            case "J":
+                user.jp = (user.jp - Double(activity.effect) < 0) ? 0 : (user.jp - Double(activity.effect))
+                   
+            case "P":
+                user.jp = (user.jp + Double(activity.effect) > 100) ? 100 : (user.jp + Double(activity.effect))
+            
+            default:
+                print("error")
+            }
+            
             try viewContext.save()
         } catch {
             print(error.localizedDescription)
@@ -90,9 +122,10 @@ struct TodayActivityView: View {
                     }.padding()
                     
                     Button(action: {
+                        updateUser(user[0])
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text("활동을 완료했어요.")
+                        Text("오늘의 활동 완료")
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(Color.white)
                             .padding()
