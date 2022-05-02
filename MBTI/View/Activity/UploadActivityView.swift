@@ -110,7 +110,8 @@ struct UploadActivityView: View {
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(Color.white)
                         .padding()
-                        .frame(maxWidth: .infinity, maxHeight: 80)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 60)
                         .background(Color.black)
                         .cornerRadius(20)
                         .background(Color.black

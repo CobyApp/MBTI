@@ -30,12 +30,23 @@ struct TodayActivityView: View {
         }
     }
     
+    private func updateUser(_ user: User) {
+            
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest var activities: FetchedResults<Activity>
+    @FetchRequest var user: FetchedResults<User>
     
     init(goalMbti: String) {
         
@@ -45,6 +56,8 @@ struct TodayActivityView: View {
         let predicate4:NSPredicate = NSPredicate(format: "goal == %@", String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: 3)]))
         
         _activities = FetchRequest<Activity>(sortDescriptors: [], predicate: NSCompoundPredicate(orPredicateWithSubpredicates: [predicate1, predicate2, predicate3, predicate4]))
+        
+        _user = FetchRequest<User>(sortDescriptors: [])
     }
     
     var body: some View {
@@ -58,11 +71,9 @@ struct TodayActivityView: View {
                     Image("ENFJ")
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: 300)
+                        .frame(maxWidth: 200)
                         .aspectRatio(1.0, contentMode: .fit)
-                        .padding(.top, 50)
-                    
-                    Spacer()
+                        .padding(.vertical, 50)
                     
                     Text(activity.mission ?? "")
                         .font(.system(size: 30, weight: .semibold))
@@ -85,7 +96,8 @@ struct TodayActivityView: View {
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(Color.white)
                             .padding()
-                            .frame(maxWidth: .infinity, maxHeight: 80)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 60)
                             .background(Color.black)
                             .cornerRadius(20)
                             .background(Color.black
@@ -103,7 +115,6 @@ struct TodayActivityView: View {
                 Text("저장된 활동 없음")
                     .font(.system(size: 30, weight: .semibold))
                     .foregroundColor(Color.black)
-                    .padding(.bottom, 50)
                 
             }
                 
