@@ -10,8 +10,8 @@ import SwiftUI
 struct TodayActivityView: View {
     
     var activityCheck: Bool {!activities.isEmpty}
-    
-    var commendIndex: Int { activities.count - 1 }
+    var day = Int(Calendar.current.dateComponents([.day], from: Date()).day ?? 0)
+    var commendIndex: Int { day % activities.count }
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
