@@ -15,6 +15,7 @@ struct HomeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest var user: FetchedResults<User>
     
+    
     init() {
         _user = FetchRequest<User>(sortDescriptors: [])
     }
@@ -42,10 +43,14 @@ struct HomeView: View {
                         .foregroundColor(Color.black)
                         .padding()
                     
-                    NavigationLink {
-                        TodayActivityView(goalMbti: user[0].goalMbti ?? "")
-                    } label: {
-                        MenuCell(guide: "오늘의 활동 추천받기")
+                    if (userCheck) {
+                    
+                        NavigationLink {
+                            TodayActivityView(goalMbti: user[0].goalMbti ?? "")
+                        } label: {
+                            MenuCell(guide: "오늘의 활동 추천받기")
+                        }
+                        
                     }
                     
                     NavigationLink {
