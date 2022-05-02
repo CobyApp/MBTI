@@ -10,19 +10,17 @@ import SwiftUI
 struct HomeView: View {
     
     var userCheck: Bool {!user.isEmpty}
-    var activityCheck: Bool {!activities.isEmpty}
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest var user: FetchedResults<User>
-    @FetchRequest var activities: FetchedResults<Activity>
     
     init() {
         _user = FetchRequest<User>(sortDescriptors: [])
-        _activities = FetchRequest<Activity>(sortDescriptors: [])
     }
     
     var body: some View {
+        
         NavigationView {
             ScrollView() {
                 
@@ -35,7 +33,7 @@ struct HomeView: View {
                             SetMbtiView()
                         }
                     } label: {
-                        TodayMbtiCell(currentMbti: user[0].currentMbti ?? "설정 필요")
+                        TodayMbtiCell(currentMbti: userCheck ? user[0].currentMbti! : "설정 필요")
                             .padding()
                     }
                     
@@ -44,12 +42,10 @@ struct HomeView: View {
                         .foregroundColor(Color.black)
                         .padding()
                     
-                    if (userCheck && activityCheck) {
-                        NavigationLink {
-                            TodayActivityView()
-                        } label: {
-                            MenuCell(guide: "오늘의 활동 추천받기")
-                        }
+                    NavigationLink {
+                        TodayActivityView()
+                    } label: {
+                        MenuCell(guide: "오늘의 활동 추천받기")
                     }
                     
                     NavigationLink {

@@ -8,6 +8,17 @@
 import SwiftUI
 
 struct TodayActivityView: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest var user: FetchedResults<User>
+    @FetchRequest var activities: FetchedResults<Activity>
+    
+    init() {
+        _user = FetchRequest<User>(sortDescriptors: [])
+        _activities = FetchRequest<Activity>(sortDescriptors: [], predicate: NSPredicate(format: "goal == %@", "E"))
+    }
+    
     var body: some View {
         
         VStack {
@@ -26,10 +37,24 @@ struct TodayActivityView: View {
                 .foregroundColor(Color.black)
                 .padding(.bottom, 50)
             
-            NavigationLink {
-            } label: {
-                MenuCell(guide: "홈화면으로 돌아가기")
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("활동을 완료했어요.")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .frame(maxWidth: .infinity, maxHeight: 80)
+                    .background(Color.black)
+                    .cornerRadius(20)
+                    .background(Color.black
+                        .opacity(0.05)
+                        .shadow(color: .black, radius: 20, x: 0, y: 4)
+                        .blur(radius: 10, opaque: false)
+                    )
+                    .padding(.top, 40)
             }
+            .padding()
             
         }
         .navigationBarTitleDisplayMode(.inline)
