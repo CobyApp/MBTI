@@ -32,7 +32,7 @@ struct MyMbtiCell: View{
             
             Divider()
             
-            Text("오늘은 \(goalMbti) 활동을 좀 더 해보세요.")
+            Text("\(String(goalMbti[goalMbti.index(goalMbti.startIndex, offsetBy: randomInt)])) 활동을 좀 더 해보세요.")
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Color.black)
                 .padding()

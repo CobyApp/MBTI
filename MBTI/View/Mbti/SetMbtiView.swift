@@ -85,6 +85,7 @@ struct SetMbtiView: View {
                         Slider(value: $ei, in: 0...100, step: 1)
                             .padding()
                             .accentColor(Color.pointColor)
+                            .foregroundColor(Color(hex: "#FF5757"))
                         
                         Text("I")
                             .font(.system(size: 20, weight: .semibold))
@@ -154,16 +155,15 @@ struct SetMbtiView: View {
                     Text("목표 MBTI ")
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color.black)
+                        .padding()
                     
                     Picker("목표 MBTI를 선택해주세요.", selection: $selectedMbti) {
                         ForEach(mbtiList, id: \.self) {
                             Text($0)
                         }
-                    }
+                    }.pickerStyle(WheelPickerStyle())
                     
                 }
-                .padding(.top, 20)
-                .padding()
                 
                 Button(action: {
                     userCheck ? updateUser(user[0]) : saveUser()
@@ -181,9 +181,8 @@ struct SetMbtiView: View {
                             .shadow(color: .black, radius: 20, x: 0, y: 4)
                             .blur(radius: 10, opaque: false)
                         )
-                        .padding(.top, 40)
+                        .padding()
                 }
-                .padding()
                 
             }
         }
