@@ -30,7 +30,7 @@ struct MyMbtiCell: View{
                 MbtiVCell(time: "목표", mbti: goalMbti)
                 
             }
-            .padding(.horizontal, 30)
+            .padding(.horizontal, 10)
             .padding(.vertical)
             
             Divider()
@@ -68,7 +68,7 @@ struct MbtiVCell: View {
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(Color.black)
             
-            Image("ENFJ")
+            Image(mbti)
                 .resizable()
                 .scaledToFit()
             

@@ -15,7 +15,7 @@ struct TodayMbtiCell: View{
        
         VStack(alignment: .center) {
             
-            Image("ENFJ")
+            Image(currentMbti == "설정 필요" ? "NONE" : currentMbti)
                 .resizable()
                 .scaledToFit()
                 .padding()

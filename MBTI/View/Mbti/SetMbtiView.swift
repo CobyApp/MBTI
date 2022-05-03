@@ -11,6 +11,7 @@ struct SetMbtiView: View {
     
     var userCheck: Bool {!user.isEmpty}
     
+    
     @State private var ei = 50.0
     @State private var ns = 50.0
     @State private var tf = 50.0
