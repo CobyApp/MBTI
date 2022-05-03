@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct MBTIApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     let persistentContainer = CoreDataManager.shared.persistentContainer
     
     var body: some Scene {
