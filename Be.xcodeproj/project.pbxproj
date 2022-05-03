@@ -31,7 +31,7 @@
 /* Begin PBXFileReference section */
 		CB856E73281CD559005DEDB3 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		CB955D98281D30CD0088F9CD /* ShowActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowActivityView.swift; sourceTree = "<group>"; };
-		CBA51930281B7C73003291F5 /* MBTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBA51930281B7C73003291F5 /* Be.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Be.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA51933281B7C73003291F5 /* MBTIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTIApp.swift; sourceTree = "<group>"; };
 		CBA51935281B7C73003291F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBA51937281B7C74003291F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		CBA51931281B7C73003291F5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CBA51930281B7C73003291F5 /* MBTI.app */,
+				CBA51930281B7C73003291F5 /* Be.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CBA5192F281B7C73003291F5 /* MBTI */ = {
+		CBA5192F281B7C73003291F5 /* Be */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBA51943281B7C74003291F5 /* Build configuration list for PBXNativeTarget "MBTI" */;
+			buildConfigurationList = CBA51943281B7C74003291F5 /* Build configuration list for PBXNativeTarget "Be" */;
 			buildPhases = (
 				CBA5192C281B7C73003291F5 /* Sources */,
 				CBA5192D281B7C73003291F5 /* Frameworks */,
@@ -175,9 +175,9 @@
 			);
 			dependencies = (
 			);
-			name = MBTI;
+			name = Be;
 			productName = MBTI;
-			productReference = CBA51930281B7C73003291F5 /* MBTI.app */;
+			productReference = CBA51930281B7C73003291F5 /* Be.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CBA5192B281B7C73003291F5 /* Build configuration list for PBXProject "MBTI" */;
+			buildConfigurationList = CBA5192B281B7C73003291F5 /* Build configuration list for PBXProject "Be" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -208,7 +208,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CBA5192F281B7C73003291F5 /* MBTI */,
+				CBA5192F281B7C73003291F5 /* Be */,
 			);
 		};
 /* End PBXProject section */
@@ -392,7 +392,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -421,14 +421,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CBA5192B281B7C73003291F5 /* Build configuration list for PBXProject "MBTI" */ = {
+		CBA5192B281B7C73003291F5 /* Build configuration list for PBXProject "Be" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBA51941281B7C74003291F5 /* Debug */,
@@ -437,7 +437,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBA51943281B7C74003291F5 /* Build configuration list for PBXNativeTarget "MBTI" */ = {
+		CBA51943281B7C74003291F5 /* Build configuration list for PBXNativeTarget "Be" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBA51944281B7C74003291F5 /* Debug */,
