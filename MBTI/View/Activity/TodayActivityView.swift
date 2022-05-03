@@ -100,7 +100,7 @@ struct TodayActivityView: View {
             
                 VStack {
                 
-                    Image("ENFJ")
+                    Image(user[0].goalMbti ?? "NONE")
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: 200)
