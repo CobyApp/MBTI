@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB4533122820BEFB00ECCF5D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4533112820BEFB00ECCF5D /* Launch Screen.storyboard */; };
 		CB4533142820BF1D00ECCF5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4533132820BF1D00ECCF5D /* AppDelegate.swift */; };
+		CB7429182821FDFC00B1CF07 /* CircleSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7429172821FDFC00B1CF07 /* CircleSelectView.swift */; };
 		CB856E74281CD559005DEDB3 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB856E73281CD559005DEDB3 /* StarRatingView.swift */; };
 		CB955D99281D30CD0088F9CD /* ShowActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB955D98281D30CD0088F9CD /* ShowActivityView.swift */; };
 		CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA51933281B7C73003291F5 /* MBTIApp.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		CB4533112820BEFB00ECCF5D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CB4533132820BF1D00ECCF5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB7429172821FDFC00B1CF07 /* CircleSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSelectView.swift; sourceTree = "<group>"; };
 		CB856E73281CD559005DEDB3 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		CB955D98281D30CD0088F9CD /* ShowActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowActivityView.swift; sourceTree = "<group>"; };
 		CBA51930281B7C73003291F5 /* Be.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Be.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 				CBA51977281C3FB9003291F5 /* MbtiTuneCell.swift */,
 				CB856E73281CD559005DEDB3 /* StarRatingView.swift */,
 				CBA51955281B82E9003291F5 /* ActivityListView.swift */,
+				CB7429172821FDFC00B1CF07 /* CircleSelectView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				CBA51976281C3BE2003291F5 /* MyMbtiCell.swift in Sources */,
 				CB4533142820BF1D00ECCF5D /* AppDelegate.swift in Sources */,
 				CBA51934281B7C73003291F5 /* MBTIApp.swift in Sources */,
+				CB7429182821FDFC00B1CF07 /* CircleSelectView.swift in Sources */,
 				CBA51956281B82E9003291F5 /* ActivityListView.swift in Sources */,
 				CBA51961281B848F003291F5 /* CoreDataManager.swift in Sources */,
 				CBA5195A281B837B003291F5 /* SetMbtiView.swift in Sources */,

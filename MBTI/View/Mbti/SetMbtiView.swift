@@ -18,7 +18,7 @@ struct SetMbtiView: View {
     @State private var jp = 50.0
     
     var mbtiList = ["ENFJ", "ENTJ", "ENFP", "ENTP", "ESFP", "ESFJ", "ESTP", "ESTJ", "INFP", "INFJ", "INTP", "ISTP", "ISFP", "ISFJ", "ISTJ", "INTJ"]
-    @State var selectedMbti = "ENFJ"
+    @State var selectedMbti = "INTJ"
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
@@ -66,135 +66,125 @@ struct SetMbtiView: View {
     }
     
     var body: some View {
-            
-        VStack(alignment: .leading) {
-            
-            VStack(alignment: .leading) {
-                
-                Text("현재 MBTI")
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(Color.black)
-                    .padding()
-                
-                HStack {
-                    
-                    Text("E")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                    Slider(value: $ei, in: 0...100, step: 1)
-                        .padding(.horizontal)
-                        .accentColor(Color.pointColor)
-                        .foregroundColor(Color(hex: "#FF5757"))
-                    
-                    Text("I")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                }.padding(.horizontal)
-                
-                HStack {
-                    
-                    Text("N")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                    Slider(value: $ns, in: 0...100, step: 1)
-                        .padding(.horizontal)
-                        .padding(.top, 10)
-                        .accentColor(Color.pointColor)
-                    
-                    Text("S")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                }.padding(.horizontal)
-                
-                HStack {
-                    
-                    Text("T")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                    Slider(value: $tf, in: 0...100, step: 1)
-                        .padding(.horizontal)
-                        .padding(.top, 10)
-                        .accentColor(Color.pointColor)
-                    
-                    Text("F")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                }.padding(.horizontal)
-                
-                HStack {
-                    
-                    Text("J")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                    Slider(value: $jp, in: 0...100, step: 1)
-                        .padding(.horizontal)
-                        .padding(.top, 10)
-                        .accentColor(Color.pointColor)
-                    
-                    Text("P")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color.black)
-                        .frame(width: 20)
-                    
-                }.padding(.horizontal)
-                
-            }
+        
+        ScrollView {
             
             VStack(alignment: .leading) {
-            
-                Text("목표 MBTI ")
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(Color.black)
-                    .padding()
-                    .padding(.top, 20)
                 
-                Picker("목표 MBTI를 선택해주세요.", selection: $selectedMbti) {
-                    ForEach(mbtiList, id: \.self) {
-                        Text($0)
-                    }
+                VStack(alignment: .leading) {
+                    
+                    Text("현재 MBTI")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .padding()
+                    
+                    HStack {
+                        
+                        Text("E")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                        CircleSelectView(value: $ei)
+                        
+                        Text("I")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                    }.padding([.horizontal, .bottom])
+                    
+                    HStack {
+                        
+                        Text("N")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                        CircleSelectView(value: $ns)
+                        
+                        Text("S")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                    }.padding()
+                    
+                    HStack {
+                        
+                        Text("T")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                        CircleSelectView(value: $tf)
+                        
+                        Text("F")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                    }.padding()
+                    
+                    HStack {
+                        
+                        Text("J")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                        CircleSelectView(value: $jp)
+                        
+                        Text("P")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
+                            .frame(width: 20)
+                        
+                    }.padding()
+                    
                 }
-                .pickerStyle(WheelPickerStyle())
-                .frame(maxHeight: .infinity)
                 
+                VStack(alignment: .leading) {
+                
+                    Text("목표 MBTI ")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color.black)
+                        .padding(.horizontal)
+                        .padding(.top, 20)
+                    
+                    Picker("목표 MBTI를 선택해주세요.", selection: $selectedMbti) {
+                        ForEach(mbtiList, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                }
+                
+                Button(action: {
+                    userCheck ? updateUser(user[0]) : saveUser()
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("설정 완료")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 60)
+                        .background(Color.black)
+                        .cornerRadius(20)
+                        .background(Color.black
+                            .opacity(0.05)
+                            .shadow(color: .black, radius: 20, x: 0, y: 4)
+                            .blur(radius: 10, opaque: false)
+                        )
+                        .padding()
+                        .padding(.top, 40)
+                }
             }
-            
-            Button(action: {
-                userCheck ? updateUser(user[0]) : saveUser()
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("설정 완료")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(Color.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 60)
-                    .background(Color.black)
-                    .cornerRadius(20)
-                    .background(Color.black
-                        .opacity(0.05)
-                        .shadow(color: .black, radius: 20, x: 0, y: 4)
-                        .blur(radius: 10, opaque: false)
-                    )
-                    .padding()
-                    .padding(.top, 40)
-            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(Text("MBTI 설정"))
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(Text("MBTI 설정"))
     }
 }
 
